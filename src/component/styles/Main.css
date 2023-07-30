@@ -1,3 +1,41 @@
 .test {
-    font-family: 'SUITE';
+  font-family: "SUITE";
+}
+body {
+  background-color: rgb(223, 226, 220);
+}
+#main {
+  padding-top: 150px;
+  padding-bottom: 90px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  background-color: white;
+  display: flex;
+  margin-right: 5%;
+  width: 70%;
+  border-radius: 10px;
+}
+
+.original {
+  height: 400px;
+}
+
+.right {
+  background-color: white;
+  display: flex;
+  width: 25%;
+  border-radius: 10px;
+}
+
+.translation {
+  height: 400px;
+  width: 400px;
 }

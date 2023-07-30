@@ -1,14 +1,27 @@
 import React from "react";
-import '../styles/Main.css'
+import "../styles/Main.css";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const Main = () => {
-    return (
-        <>
-            <img src="logo.png" alt="logo" width={200}/>
-            <div className="test">메인 페이지! 폰트 점검용</div>
-            <div className="default">비교용 기본 폰트</div>
-        </>
-    )
-}
+  return (
+    <>
+      <Header />
+
+      <div id="main">
+        <div className="container">
+          <section className="left">
+            <div className="original"></div>
+          </section>
+          <section className="right">
+            <div className="translation"></div>
+          </section>
+        </div>
+      </div>
+
+      <Footer />
+    </>
+  );
+};
 
 export default Main;
