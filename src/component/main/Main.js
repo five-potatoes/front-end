@@ -8,8 +8,9 @@ const Main = () => {
       <img src="logo.png" alt="logo" width={200} />
       <div className="test">메인 페이지! 폰트 점검용</div>
       <div className="default">비교용 기본 폰트</div>
-
-      <Webcam mode={"sign"} />
+      <div className="vid">
+        <Webcam mode={"sign"} />
+      </div>
     </>
   );
 };
