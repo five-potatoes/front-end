@@ -5,13 +5,3 @@
 body {
     background-color: greenyellow;
 }
-
-.vid {
-    background-color: white;
-    width: 40%;
-    height: 300px;
-    align-items: center;
-    display: inline-flex;
-    flex: auto;
-    margin: 30px;
-}

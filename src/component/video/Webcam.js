@@ -78,7 +78,7 @@ const WebcamComponent = ({ mode }) => {
   }, [recordedChunks]);
 
   return (
-    <div className="s">
+    <div className="vc">
       <div className="webcam">
         {rec ? (
           <ReactPlayer
@@ -93,24 +93,27 @@ const WebcamComponent = ({ mode }) => {
           <Webcam audio={false} ref={webcamRef} />
         )}
       </div>
-
-      {mode === "sign" &&
-        !rec &&
-        (capturing ? (
-          <button onClick={handleStopCaptureClick}>녹화 중지</button>
-        ) : (
-          <button onClick={handleStartCaptureClick}>녹화 시작</button>
-        ))}
-      {/* {recordedChunks.length > 0 && (
+      <div className="vb">
+        {mode === "sign" &&
+          !rec &&
+          (capturing ? (
+            <button onClick={handleStopCaptureClick}>녹화 중지</button>
+          ) : (
+            <button onClick={handleStartCaptureClick}>녹화 시작</button>
+          ))}
+        {/* {recordedChunks.length > 0 && (
         <button onClick={handleDownload}>Download</button>
       )} */}
-      {recordedChunks.length > 0 &&
-        (play ? (
-          <button onClick={stopPlay}>영상 중지</button>
-        ) : (
-          <button onClick={startPlay}>영상 실행</button>
-        ))}
-      {recordedChunks.length > 0 && <button onClick={endPlay}>다시 찍기</button>}
+        {recordedChunks.length > 0 &&
+          (play ? (
+            <button onClick={stopPlay}>영상 중지</button>
+          ) : (
+            <button onClick={startPlay}>영상 실행</button>
+          ))}
+        {recordedChunks.length > 0 && (
+          <button onClick={endPlay}>다시 찍기</button>
+        )}
+      </div>
     </div>
   );
 };
