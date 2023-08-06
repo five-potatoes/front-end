@@ -9,21 +9,20 @@ const WebcamComponent = ({ mode }) => {
   const [capturing, setCapturing] = React.useState(false);
   const [recordedChunks, setRecordedChunks] = React.useState([]);
 
+
+  const videoConstraints = {
+    facingMode: "user",
+  };
   const blob = new Blob(recordedChunks, {
     type: "video/webm",
   });
   const url = URL.createObjectURL(blob);
 
   const [rec, setRec] = React.useState(false);
-  const [end, setEnd] = React.useState(false);
   const [play, setPlay] = React.useState(false);
   console.log(play);
-  const startPlay = () => {
-    setPlay(true);
-  };
-  const stopPlay = () => {
-    setPlay(false);
-  };
+  const startPlay = () => setPlay(true);
+  const stopPlay = () => setPlay(false);
   const endPlay = () => {
     setRec(false);
     setPlay(false);
@@ -60,22 +59,22 @@ const WebcamComponent = ({ mode }) => {
     // eslint-disable-next-line
   }, [mediaRecorderRef, webcamRef, setCapturing]);
 
-  const handleDownload = React.useCallback(() => {
-    if (recordedChunks.length) {
-      const blob = new Blob(recordedChunks, {
-        type: "video/webm",
-      });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      document.body.appendChild(a);
-      a.style = "display: none";
-      a.href = url;
-      a.download = "react-webcam-stream-capture.webm";
-      a.click();
-      window.URL.revokeObjectURL(url);
-      setRecordedChunks([]);
-    }
-  }, [recordedChunks]);
+  // const handleDownload = React.useCallback(() => {
+  //   if (recordedChunks.length) {
+  //     const blob = new Blob(recordedChunks, {
+  //       type: "video/webm",
+  //     });
+  //     const url = URL.createObjectURL(blob);
+  //     const a = document.createElement("a");
+  //     document.body.appendChild(a);
+  //     a.style = "display: none";
+  //     a.href = url;
+  //     a.download = "react-webcam-stream-capture.webm";
+  //     a.click();
+  //     window.URL.revokeObjectURL(url);
+  //     setRecordedChunks([]);
+  //   }
+  // }, [recordedChunks]);
 
   return (
     <div className="vc">
@@ -90,28 +89,42 @@ const WebcamComponent = ({ mode }) => {
             height="100%"
           />
         ) : (
-          <Webcam audio={false} ref={webcamRef} />
+          <Webcam
+            audio={false}
+            ref={webcamRef}
+            videoConstraints={videoConstraints}
+          />
         )}
       </div>
       <div className="vb">
         {mode === "sign" &&
           !rec &&
           (capturing ? (
-            <button onClick={handleStopCaptureClick}>녹화 중지</button>
+            <button onClick={handleStopCaptureClick}>
+              <img src="img/녹화중지.png" alt="녹화중지" className="rb" />
+            </button>
           ) : (
-            <button onClick={handleStartCaptureClick}>녹화 시작</button>
+            <button onClick={handleStartCaptureClick}>
+              <img src="img/녹화.png" alt="녹화" className="rb" />
+            </button>
           ))}
         {/* {recordedChunks.length > 0 && (
         <button onClick={handleDownload}>Download</button>
       )} */}
         {recordedChunks.length > 0 &&
           (play ? (
-            <button onClick={stopPlay}>영상 중지</button>
+            <button onClick={stopPlay}>
+              <img src="img/중지.png" alt="재생중지" className="rb" />
+            </button>
           ) : (
-            <button onClick={startPlay}>영상 실행</button>
+            <button onClick={startPlay}>
+              <img src="img/재생.png" alt="재생" className="rb" />
+            </button>
           ))}
         {recordedChunks.length > 0 && (
-          <button onClick={endPlay}>다시 찍기</button>
+          <button onClick={endPlay}>
+            <img src="img/다시.png" alt="다시" className="rb" />
+          </button>
         )}
       </div>
     </div>
@@ -121,3 +134,5 @@ const WebcamComponent = ({ mode }) => {
 export default WebcamComponent;
 
 // https://www.npmjs.com/package/react-webcam
+
+//이미지 출처 <a href="https://kr.freepik.com/free-vector/symbols-arrows-25-flat-color-icon-pack-including-complete-check-undo-stop-tumbler_38018468.htm#query=%EB%85%B9%ED%99%94%20%EB%B2%84%ED%8A%BC&position=13&from_view=keyword&track=ais">작가 flatart</a> 출처 Freepik
