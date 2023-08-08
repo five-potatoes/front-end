@@ -3,18 +3,17 @@ import React from "react";
 import ReactPlayer from "react-player";
 import "./Webcam.css";
 
-const WebcamComponent = ({ mode }) => {
+const WebcamComponent = ({ mode,  }) => {
   const webcamRef = React.useRef(null);
   const mediaRecorderRef = React.useRef(null);
   const [capturing, setCapturing] = React.useState(false);
   const [recordedChunks, setRecordedChunks] = React.useState([]);
 
-
   const videoConstraints = {
     facingMode: "user",
   };
   const blob = new Blob(recordedChunks, {
-    type: "video/webm",
+    type: "video/mp4",
   });
   const url = URL.createObjectURL(blob);
 
@@ -32,9 +31,23 @@ const WebcamComponent = ({ mode }) => {
   const handleStartCaptureClick = React.useCallback(() => {
     setCapturing(true);
     setRecordedChunks([]);
-    mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
-      mimeType: "video/webm",
-    });
+
+    let options = {};
+    if (MediaRecorder.isTypeSupported("video/webm; codecs=vp9")) {
+      options = { mimeType: "video/webm; codecs=vp9" };
+    } else if (MediaRecorder.isTypeSupported("video/webm")) {
+      options = { mimeType: "video/webm" };
+    } else if (MediaRecorder.isTypeSupported("video/mp4")) {
+      options = { mimeType: "video/mp4" };
+    } else {
+      console.error("No suitable mimeType found for this device");
+    }
+
+    mediaRecorderRef.current = new MediaRecorder(
+      webcamRef.current.stream,
+      options
+    );
+
     mediaRecorderRef.current.addEventListener(
       "dataavailable",
       handleDataAvailable
@@ -62,7 +75,7 @@ const WebcamComponent = ({ mode }) => {
   // const handleDownload = React.useCallback(() => {
   //   if (recordedChunks.length) {
   //     const blob = new Blob(recordedChunks, {
-  //       type: "video/webm",
+  //       type: "video/mp4",
   //     });
   //     const url = URL.createObjectURL(blob);
   //     const a = document.createElement("a");
@@ -101,11 +114,11 @@ const WebcamComponent = ({ mode }) => {
           !rec &&
           (capturing ? (
             <button onClick={handleStopCaptureClick}>
-              <img src="img/녹화중지.png" alt="녹화중지" className="rb" />
+              <img src="img/녹화종료.png" alt="녹화중지" className="rb" />
             </button>
           ) : (
             <button onClick={handleStartCaptureClick}>
-              <img src="img/녹화.png" alt="녹화" className="rb" />
+              <img src="img/녹화시작.png" alt="녹화" className="rb" />
             </button>
           ))}
         {/* {recordedChunks.length > 0 && (
