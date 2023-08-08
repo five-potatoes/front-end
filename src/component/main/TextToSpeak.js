@@ -3,7 +3,7 @@
 const TextToSpeak = (text) => {
     let voices = [];
 
-    const setVoiceList = () => { // 디바이스에 내장된 voice 가져오기
+    const setVoiceList = () => {
         voices = window.speechSynthesis.getVoices();
     };
 
@@ -18,17 +18,18 @@ const TextToSpeak = (text) => {
         const utterThis = new SpeechSynthesisUtterance(txt);
 
         utterThis.lang = lang;
-        
-        // 한국어 voice 찾기
         const kor_voice = voices.find(
-            (elem) => elem.lang === lang || elem.lang === lang.replace("-","_")
-        )
+            (elem) => elem.lang === lang || elem.lang === lang.replace("-", "_")
+        );
+
         if (kor_voice) {
             utterThis.voice = kor_voice;
         } else {
             return;
         }
-    }
+
+        window.speechSynthesis.speak(utterThis);
+    };
 
     speech(text);
 }
