@@ -22,7 +22,7 @@ const Translator = () => {
         <>
             <input onChange={handleInput} value={text} />
             <button onClick={handleButton}>음성 변환</button>
-            <CopyToClipboard text="test" onCopy={() => { alert("복사 완료!") }}><button>복사</button></CopyToClipboard>
+            <CopyToClipboard text={text}><button>복사</button></CopyToClipboard>
         </>
     )
 }
