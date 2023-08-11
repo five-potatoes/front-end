@@ -24,7 +24,7 @@ const Translator = () => {
 
         axiosInstance({
             method: "POST",
-            url: "/v2t",
+            url: "/",
             headers: {
                 "Content-Type": "application/json",
             },
