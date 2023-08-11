@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import TextToSpeak from "./TextToSpeak";
 import CopyToClipboard from "react-copy-to-clipboard";
+import axiosInstance from "../..";
 
 const Translator = () => {
     const [text, setText] = useState("test");
@@ -16,7 +17,17 @@ const Translator = () => {
 
     const handleButton = () => {
         TextToSpeak(text);
-      };
+    };
+
+    axiosInstance({
+        method: "POST",
+        url: "/v2t",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        data: {
+        },
+    })
 
     return (
         <>
