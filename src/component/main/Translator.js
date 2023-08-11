@@ -5,7 +5,7 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import axiosInstance from "../..";
 
 const Translator = () => {
-    const [text, setText] = useState("test");
+    const [text, setText] = useState("ttest");
 
     useEffect(() => {
         window.speechSynthesis.getVoices();
