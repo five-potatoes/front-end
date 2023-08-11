@@ -9,7 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const axiosInstance = axios.create({
-  baseURL: '15.165.223.118:8080/translation',
+  baseURL: 'http://15.165.223.118:8080/translation/v2t',
   headers: { "Content-type": "application/json" },
   withCredentials: true,
 });
