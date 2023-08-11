@@ -25,7 +25,6 @@ const Translator = () => {
         axiosInstance({
             method: "POST",
             url: "",
-            data: {text:"?"},
         }).then((res) => {
             console.log(res);
         }).catch((e) => {
