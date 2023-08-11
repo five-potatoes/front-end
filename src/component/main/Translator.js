@@ -19,7 +19,6 @@ const Translator = () => {
         TextToSpeak(text);
     };
 
-
     const onClickSendText = () => {
 
         axiosInstance({
