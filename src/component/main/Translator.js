@@ -24,7 +24,7 @@ const Translator = () => {
 
         axiosInstance({
             method: "POST",
-            url: "/",
+            url: "",
         }).then((res) => {
             console.log(res);
         }).catch((e) => {
