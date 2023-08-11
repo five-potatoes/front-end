@@ -43,7 +43,7 @@ const Translator = () => {
             <input onChange={handleInput} value={text} />
             <button onClick={handleButton}>음성 변환</button>
             <CopyToClipboard text={text}><button>복사</button></CopyToClipboard>
-            <input type="submit" onClick={onClickSendText}>BUTTON</input>
+            <button onClick={onClickSendText}>BUTTON</button>
         </>
     )
 }
