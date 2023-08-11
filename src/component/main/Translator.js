@@ -25,11 +25,6 @@ const Translator = () => {
         axiosInstance({
             method: "POST",
             url: "/",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            data: {
-            },
         }).then((res) => {
             console.log(res);
         }).catch((e) => {
