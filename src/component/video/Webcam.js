@@ -1,7 +1,7 @@
 import Webcam from "react-webcam";
 import React from "react";
 import ReactPlayer from "react-player";
-import style from "./Webcam.module.css"
+import style from "./Webcam.module.css";
 
 const WebcamComponent = ({ mode, src }) => {
   const webcamRef = React.useRef(null);
@@ -90,7 +90,7 @@ const WebcamComponent = ({ mode, src }) => {
   // }, [recordedChunks]);
 
   return (
-    <div className={style.vc}>
+    <>
       <div className={style.webcam}>
         {mode === "text" ? (
           <ReactPlayer
@@ -149,7 +149,7 @@ const WebcamComponent = ({ mode, src }) => {
           </button>
         )}
       </div>
-    </div>
+    </>
   );
 };
 
