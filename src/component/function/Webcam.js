@@ -1,7 +1,7 @@
 import Webcam from "react-webcam";
 import React from "react";
 import ReactPlayer from "react-player";
-import style from "./Webcam.module.css";
+import style from "../styles/Webcam.module.css"
 
 const WebcamComponent = ({ mode, src }) => {
   const webcamRef = React.useRef(null);

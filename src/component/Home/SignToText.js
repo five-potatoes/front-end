@@ -6,10 +6,17 @@ import Header from "./Header";
 import Translator from '../function/Translator'
 import TextToSpeak from "../function/TextToSpeak";
 import CopyToClipboard from "react-copy-to-clipboard";
+import Webcam from "../function/Webcam";
 //https://stickode.tistory.com/663
 
 const SignToText = () => {
-    const [text, setText] = useState("ttest");
+    /* const [showInitialBody, setShowInitialBody] = useState(true);
+
+    const handleToggleBody = () => {
+    setShowInitialBody(!showInitialBody);
+    }; */
+
+    const [text, setText] = useState("test");
 
     useEffect(() => {
         window.speechSynthesis.getVoices();
@@ -29,7 +36,7 @@ const SignToText = () => {
             <body>
                 <div className={styles.body}>
                     <div>
-                        <div className={styles.video}></div>
+                    <Webcam className={styles.Webcam} mode={"sign"} />
                         <div>
                             <button className={styles.recordBtn}>녹음</button>
                             <button className={styles.playBtn}>시작</button>
@@ -44,6 +51,10 @@ const SignToText = () => {
                 </div>
             </body>
             <Footer />
+            {/* {showInitialBody ? <Body1 /> : <Body2 />}*/}
+            {/* <button onClick={handleToggleBody}>
+            {showInitialBody ? 'Show Body 2' : 'Show Body 1'}
+            </button> */}
         </>
     )
 }
