@@ -1,12 +1,25 @@
 import React from "react";
-import '../styles/Main.css'
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
+import SignToText from "../body/SignToText";
+
 
 const Main = () => {
+    /* const [showInitialBody, setShowInitialBody] = useState(true);
+
+    const handleToggleBody = () => {
+    setShowInitialBody(!showInitialBody);
+    }; */
     return (
         <>
-            <img src="logo.png" alt="logo" width={200}/>
-            <div className="test">메인 페이지! 폰트 점검용</div>
-            <div className="default">비교용 기본 폰트</div>
+            <Header />
+            <SignToText />
+            
+            <Footer />
+            {/* {showInitialBody ? <Body1 /> : <Body2 />}*/}
+            {/* <button onClick={handleToggleBody}>
+            {showInitialBody ? 'Show Body 2' : 'Show Body 1'}
+            </button> */}
         </>
     )
 }
