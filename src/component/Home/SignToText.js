@@ -35,7 +35,7 @@ const SignToText = () => {
             <Header />
             <body>
                 <div className={styles.body}>
-                    <div>
+                    <div className="styles.video">
                         <Webcam className={styles.Webcam} mode={"sign"} />
                         <div>
                             <button className={styles.transBtn} onClick={() => { Translator("video"); }}>번역</button>
