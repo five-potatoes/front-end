@@ -1,10 +1,10 @@
 import React from "react";
-import Header from '../header/Header';
-import Footer from '../footer/Footer';
-import SignToText from "../body/SignToText";
+import Header from './Home/Header';
+import Footer from './Home/Footer';
+import SignToText from "./Home/SignToText";
 
 
-const Main = () => {
+const Home = () => {
     /* const [showInitialBody, setShowInitialBody] = useState(true);
 
     const handleToggleBody = () => {
@@ -24,4 +24,4 @@ const Main = () => {
     )
 }
 
-export default Main;
+export default Home;
