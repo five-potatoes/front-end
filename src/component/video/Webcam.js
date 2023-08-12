@@ -1,9 +1,9 @@
 import Webcam from "react-webcam";
 import React from "react";
 import ReactPlayer from "react-player";
-import "./Webcam.css";
+import style from "./Webcam.module.css"
 
-const WebcamComponent = ({ mode,  }) => {
+const WebcamComponent = ({ mode, src }) => {
   const webcamRef = React.useRef(null);
   const mediaRecorderRef = React.useRef(null);
   const [capturing, setCapturing] = React.useState(false);
@@ -90,9 +90,18 @@ const WebcamComponent = ({ mode,  }) => {
   // }, [recordedChunks]);
 
   return (
-    <div className="vc">
-      <div className="webcam">
-        {rec ? (
+    <div className={style.vc}>
+      <div className={style.webcam}>
+        {mode === "text" ? (
+          <ReactPlayer
+            url={src}
+            playing={play}
+            onPlay={startPlay}
+            onPause={stopPlay}
+            width="100%"
+            height="100%"
+          />
+        ) : rec ? (
           <ReactPlayer
             url={url}
             playing={play}
@@ -109,16 +118,16 @@ const WebcamComponent = ({ mode,  }) => {
           />
         )}
       </div>
-      <div className="vb">
+      <div className={style.vb}>
         {mode === "sign" &&
           !rec &&
           (capturing ? (
             <button onClick={handleStopCaptureClick}>
-              <img src="img/녹화종료.png" alt="녹화중지" className="rb" />
+              <img src="img/녹화종료.png" alt="녹화중지" className={style.rb} />
             </button>
           ) : (
             <button onClick={handleStartCaptureClick}>
-              <img src="img/녹화시작.png" alt="녹화" className="rb" />
+              <img src="img/녹화시작.png" alt="녹화" className={style.rb} />
             </button>
           ))}
         {/* {recordedChunks.length > 0 && (
@@ -127,16 +136,16 @@ const WebcamComponent = ({ mode,  }) => {
         {recordedChunks.length > 0 &&
           (play ? (
             <button onClick={stopPlay}>
-              <img src="img/중지.png" alt="재생중지" className="rb" />
+              <img src="img/중지.png" alt="재생중지" className={style.rb} />
             </button>
           ) : (
             <button onClick={startPlay}>
-              <img src="img/재생.png" alt="재생" className="rb" />
+              <img src="img/재생.png" alt="재생" className={style.rb} />
             </button>
           ))}
         {recordedChunks.length > 0 && (
           <button onClick={endPlay}>
-            <img src="img/다시.png" alt="다시" className="rb" />
+            <img src="img/다시.png" alt="다시" className={style.rb} />
           </button>
         )}
       </div>
@@ -145,7 +154,3 @@ const WebcamComponent = ({ mode,  }) => {
 };
 
 export default WebcamComponent;
-
-// https://www.npmjs.com/package/react-webcam
-
-//이미지 출처 <a href="https://kr.freepik.com/free-vector/symbols-arrows-25-flat-color-icon-pack-including-complete-check-undo-stop-tumbler_38018468.htm#query=%EB%85%B9%ED%99%94%20%EB%B2%84%ED%8A%BC&position=13&from_view=keyword&track=ais">작가 flatart</a> 출처 Freepik
