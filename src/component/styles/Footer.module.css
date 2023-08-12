@@ -1,0 +1,21 @@
+.foot {
+    font-family: 'SUITE';
+    border: none;
+    background-color: #DFE2DC;
+    text-align: center;
+    position : fixed;
+    bottom : 0;
+    width: 100%;
+}
+
+.gitHub{
+    text-decoration-line : none;
+}
+
+.gitHub:link {
+    color: blue;
+}
+
+.gitHub:visited {
+    color: blue;
+}

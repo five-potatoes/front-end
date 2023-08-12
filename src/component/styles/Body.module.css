@@ -1,0 +1,42 @@
+.allBody{
+    flex-wrap: nowrap;
+}
+
+.body{
+    display: flex;
+    justify-content: flex-start;
+    border: none;
+    margin: 20px;
+    background-color: #DFE2DC;
+    
+}
+
+.video{
+    margin: 10px;
+    border: none;
+    background-color: white;
+    width: 400px;
+    aspect-ratio: 16/9;
+}
+
+.recordBtn{
+    margin: 20px;
+    border: none;
+}
+.playBtn{
+    border: none;
+}
+.transBtn{
+    border: none;
+    margin-left: 240px;
+}
+
+.text{
+    margin-top: 10px;
+    margin-left: 25px;
+    resize: none;
+    border: none;
+    width: 400px;
+}
+
+/* https://studiomeal.com/archives/197 */
