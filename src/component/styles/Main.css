@@ -1,20 +1,13 @@
 .test {
-    font-family: 'SUITE';
+  font-family: "SUITE";
 }
 
 body {
-    background-color: greenyellow;
+  background-color: greenyellow;
 }
 
-.bb{
+.bb {
   background-color: white;
-    width: 40%;
-    height: 400px;
-    align-items: center;
-    display: flex;
-    flex: auto;
-    margin: 30px;
-    padding: 10px;
-    flex-direction: column;
-    
+  width: 40%;
+  height: 400px;
 }

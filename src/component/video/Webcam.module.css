@@ -1,6 +1,17 @@
+.wc {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex: auto;
+  padding: 10px;
+  flex-direction: column;
+}
+
 .webcam {
   width: 100%;
   height: 90%;
+  margin-bottom: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,13 +19,13 @@
 
 .webcam video {
   transform: scaleX(-1);
-  object-fit:cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
   border-radius: 10px;
 }
 
-.vb{
+.vb {
   display: flex;
   margin-right: auto;
   height: 10%;
@@ -25,10 +36,10 @@
   border: none;
 }
 
-.rb{
+.rb {
   width: 100%;
   height: 100%;
 }
-.rb:hover{
+.rb:hover {
   filter: grayscale();
 }

@@ -90,7 +90,7 @@ const WebcamComponent = ({ mode, src }) => {
   // }, [recordedChunks]);
 
   return (
-    <>
+    <div className={style.wc}>
       <div className={style.webcam}>
         {mode === "text" ? (
           <ReactPlayer
@@ -149,7 +149,7 @@ const WebcamComponent = ({ mode, src }) => {
           </button>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
