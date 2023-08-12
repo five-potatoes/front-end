@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.4.0",
     "eslint-plugin-react-hooks": "^5.0.0-canary-493f72b0a-20230727",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
