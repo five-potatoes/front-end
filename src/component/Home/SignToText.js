@@ -33,21 +33,19 @@ const SignToText = () => {
     return (
         <>
             <Header />
-            <body>
-                <div className={styles.body}>
-                    <div className={styles.video}>
-                        <Webcam className={styles.Webcam} mode={"sign"} />
-                        <div>
-                            <button className={styles.transBtn} onClick={() => { Translator("video"); }}>번역</button>
-                        </div>
-                    </div>
+            <div className={styles.body}>
+                <div className={styles.video}>
+                    <Webcam mode={"sign"} />
                     <div>
-                        <input className={styles.text} onChange={handleInput} value={text} />
-                        <button onClick={handleButton}>음성 변환</button>
-                        <CopyToClipboard text={text}><button>복사</button></CopyToClipboard>
+                        <button className={styles.transBtn} onClick={() => { Translator("video"); }}>번역</button>
                     </div>
                 </div>
-            </body>
+                <div>
+                    <input className={styles.text} onChange={handleInput} value={text} />
+                    <button onClick={handleButton}>음성 변환</button>
+                    <CopyToClipboard text={text}><button>복사</button></CopyToClipboard>
+                </div>
+            </div>
             <Footer />
             {/* {showInitialBody ? <Body1 /> : <Body2 />}*/}
             {/* <button onClick={handleToggleBody}>
