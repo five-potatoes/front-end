@@ -16,8 +16,6 @@ const Header = () => {
                 <img src="logo.png" alt="logo" className={styles.logo} width={100}/>
                 <button onClick={sTT} className={styles.headbtn}>수화 번역</button>
                 <button onClick={tTS} className={styles.headbtn}>글자 번역</button>
-
-                    
             </div>
         </header>
     )
