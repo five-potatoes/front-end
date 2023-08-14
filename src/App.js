@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+
+import { Routes, Route} from "react-router-dom";
 import './App.css';
 import TextToSign from './component/Home/TextToSign'
 import SignToText from './component/Home/SignToText';

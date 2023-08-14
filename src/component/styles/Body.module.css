@@ -1,13 +1,8 @@
-.allBody{
-    flex-wrap: nowrap;
-}
-
 .body{
     display: flex;
     background-color: #DFE2DC;
     width: 100vw;
-    height: 100vh;
-    margin: 0px;
+    height: 92.5vh;
 }
 
 .video{
@@ -25,7 +20,7 @@
 .trans{
     border: none;
     margin-top: 80px;
-    margin-left: 15px;
+    margin-left: 20px;
     margin-right: 7.5%;
     margin-bottom: 40px;
     background-color: #FAF9F6;
@@ -51,10 +46,12 @@
     outline: none;
 }
 
-.transbtn{
-    margin-left: 20px;
+.btn{
+    margin-left: 40px;
+    margin-top: 20px;
+    border: none;
 }
 
-.copybtn{
-    margin-left: 40px;
+.btnImg{
+    width: 100%;
 }

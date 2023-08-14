@@ -36,8 +36,14 @@ const SignToText = () => {
                     <div className={styles.trans}>
                         <textarea className={styles.text} onChange={handleInput} value={text} />
                         <div>
-                            <button onClick={handleButton} className={styles.transbtn}>음성 변환</button>
-                            <CopyToClipboard text={text} className={styles.copybtn}><button>복사</button></CopyToClipboard>
+                            <button onClick={handleButton} className={styles.btn}>
+                                <img src="img/소리듣기.png"/>
+                            </button>
+                            <CopyToClipboard text={text} className={styles.btn}>
+                                <button>
+                                    <img src="img/복사버튼.png"/>
+                                </button>
+                            </CopyToClipboard>
                         </div>
                         
                     </div>
