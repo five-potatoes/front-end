@@ -1,7 +1,7 @@
 import Webcam from "react-webcam";
 import React from "react";
 import ReactPlayer from "react-player";
-import style from "../styles/Webcam.module.css"
+import style from "../styles/Webcam.module.css";
 
 const WebcamComponent = ({ mode, src }) => {
   const webcamRef = React.useRef(null);
@@ -19,7 +19,6 @@ const WebcamComponent = ({ mode, src }) => {
 
   const [rec, setRec] = React.useState(false);
   const [play, setPlay] = React.useState(false);
-  console.log(play);
   const startPlay = () => setPlay(true);
   const stopPlay = () => setPlay(false);
   const endPlay = () => {
