@@ -9,7 +9,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<SignToText />} />
-      <Route path='/Text' element={<TextToSign />} />
+      <Route path='/TextTranslator' element={<TextToSign />} />
     </Routes>
   );
 }
