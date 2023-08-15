@@ -3,9 +3,9 @@
     border: none;
     background-color: #DFE2DC;
     text-align: center;
-    position : fixed;
     bottom : 0;
     width: 100%;
+    height: 50px;
 }
 
 .gitHub{
@@ -18,4 +18,8 @@
 
 .gitHub:visited {
     color: blue;
+}
+
+.our{
+    margin: 0;
 }
