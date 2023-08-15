@@ -3,8 +3,8 @@
     border: none;
     background-color: #DFE2DC;
     text-align: center;
-    bottom : 0;
     width: 100%;
+    height: 50px;
 }
 
 .gitHub{
@@ -17,4 +17,9 @@
 
 .gitHub:visited {
     color: blue;
+}
+
+.our {
+    
+    margin-bottom: 0;
 }
