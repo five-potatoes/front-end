@@ -1,34 +1,27 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import styles from '../styles/Body.module.css'
+import styles from '../styles/SignToText.module.css'
 import Footer from "./Footer";
 import Header from "./Header";
-import Translator from '../function/Translator'
 import TextToSpeak from "../function/TextToSpeak";
 import CopyToClipboard from "react-copy-to-clipboard";
 import Webcam from "../function/Webcam";
-//https://stickode.tistory.com/663
 
 const SignToText = () => {
-    /* const [showInitialBody, setShowInitialBody] = useState(true);
 
-    const handleToggleBody = () => {
-    setShowInitialBody(!showInitialBody);
-    }; */
+  const [text, setText] = useState("test");
 
-    const [text, setText] = useState("test");
+  useEffect(() => {
+    window.speechSynthesis.getVoices();
+  }, []);
 
-    useEffect(() => {
-        window.speechSynthesis.getVoices();
-    }, []);
+  const handleInput = (e) => {
+    setText(e.target.value);
+  };
 
-    const handleInput = (e) => {
-        setText(e.target.value);
-    }
-
-    const handleButton = () => {
-        TextToSpeak(text);
-    };
+  const handleButton = () => {
+    TextToSpeak(text);
+  };
 
     return (
         <>
@@ -36,26 +29,27 @@ const SignToText = () => {
             <body>
                 <div className={styles.body}>
                     <div className={styles.video}>
-                        <Webcam className={styles.Webcam} mode={"sign"} />
-                        <div>
-                            <button className={styles.transBtn} onClick={() => { Translator("video"); }}>번역</button>
-                        </div>
+                        <Webcam mode={"sign"} />
                     </div>
-                    <div>
-                        <input className={styles.text} onChange={handleInput} value={text} />
-                        <button onClick={handleButton}>음성 변환</button>
-                        <CopyToClipboard text={text}><button>복사</button></CopyToClipboard>
+                    <div className={styles.trans}>
+                        <textarea className={styles.text} onChange={handleInput} value={text} />
+                        <div className={styles.btn}>
+                            <button onClick={handleButton} >
+                                <img src="img/소리.png" alt="소리" className={ styles.btnImg} />
+                            </button>
+                            <CopyToClipboard text={text} >
+                                <button className={styles.soundCopy}>
+                                    <img src="img/복사.png" alt="복사" className={ styles.btnImg}/>
+                                </button>
+                            </CopyToClipboard>
+                        </div>
+                        
                     </div>
                 </div>
             </body>
             <Footer />
-            {/* {showInitialBody ? <Body1 /> : <Body2 />}*/}
-            {/* <button onClick={handleToggleBody}>
-            {showInitialBody ? 'Show Body 2' : 'Show Body 1'}
-            </button> */}
         </>
     )
 }
 
 export default SignToText;
-
