@@ -26,7 +26,6 @@ const TextToSign = () => {
     return (
         <>
             <Header />
-            <body>
                 <div className={styles.body}>
                     <div className={styles.trans}>
                         <textarea className={styles.text} onChange={handleInput} value={text} />
@@ -45,7 +44,6 @@ const TextToSign = () => {
                         <Webcam mode={"text"} src={""} />
                     </div>
                 </div>
-            </body>
             <Footer />
         </>
     )

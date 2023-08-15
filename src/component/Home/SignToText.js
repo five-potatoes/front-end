@@ -27,7 +27,6 @@ const SignToText = () => {
     return (
         <>
             <Header />
-            <body>
                 <div className={styles.body}>
                     <div className={styles.video}>
                         <Webcam mode={"sign"} />
@@ -47,7 +46,6 @@ const SignToText = () => {
                         
                     </div>
                 </div>
-            </body>
             <Footer />
         </>
     )
