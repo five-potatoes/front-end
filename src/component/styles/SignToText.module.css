@@ -1,0 +1,57 @@
+.body{
+    display: flex;
+    background-color: #DFE2DC;
+    width: 100vw;
+    height: 92.5vh;
+}
+
+.video{
+    margin-top: 80px;
+    margin-left: 7.5%;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    padding-top: 30px;
+    border: none;
+    background-color: #FAF9F6;
+    width: 50vw;
+    height: 70vh;
+}
+
+.trans{
+    border: none;
+    margin-top: 80px;
+    margin-left: 20px;
+    margin-right: 7.5%;
+    margin-bottom: 40px;
+    background-color: #FAF9F6;
+    height: 70vh;
+}
+
+
+.text{
+    margin-top: 40px;
+    border-top: 1px solid #DFE2DC;
+    border-bottom: 1px solid #DFE2DC;
+    border-right: none;
+    border-left: none;
+    width: 30vw;
+    height: 57.5vh;
+    padding: 10px;
+    resize: none;
+    background-color: #FAF9F6;
+    
+}
+
+.text:focus {
+    outline: none;
+}
+
+.btn{
+    margin-left: 40px;
+    margin-top: 20px;
+    border: none;
+}
+
+.btnImg{
+    width: 100%;
+}

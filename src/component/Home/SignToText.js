@@ -1,20 +1,14 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import styles from "../styles/Body.module.css";
+import styles from '../styles/SignToText.module.css'
 import Footer from "./Footer";
 import Header from "./Header";
 import Translator from "../function/Translator";
 import TextToSpeak from "../function/TextToSpeak";
 import CopyToClipboard from "react-copy-to-clipboard";
 import Webcam from "../function/Webcam";
-//https://stickode.tistory.com/663
 
 const SignToText = () => {
-  /* const [showInitialBody, setShowInitialBody] = useState(true);
-
-    const handleToggleBody = () => {
-    setShowInitialBody(!showInitialBody);
-    }; */
 
   const [text, setText] = useState("test");
 
@@ -30,30 +24,33 @@ const SignToText = () => {
     TextToSpeak(text);
   };
 
-  return (
-    <>
-      <Header />
-
-      <div className={styles.body}>
-        <div className={styles.video}>
-          <Webcam mode={"sign"} />
-        </div>
-        <div>
-          <input className={styles.text} onChange={handleInput} value={text} />
-          <button onClick={handleButton}>음성 변환</button>
-          <CopyToClipboard text={text}>
-            <button>복사</button>
-          </CopyToClipboard>
-        </div>
-      </div>
-
-      <Footer />
-      {/* {showInitialBody ? <Body1 /> : <Body2 />}*/}
-      {/* <button onClick={handleToggleBody}>
-            {showInitialBody ? 'Show Body 2' : 'Show Body 1'}
-            </button> */}
-    </>
-  );
-};
+    return (
+        <>
+            <Header />
+            <body>
+                <div className={styles.body}>
+                    <div className={styles.video}>
+                        <Webcam mode={"sign"} />
+                    </div>
+                    <div className={styles.trans}>
+                        <textarea className={styles.text} onChange={handleInput} value={text} />
+                        <div>
+                            <button onClick={handleButton} className={styles.btn}>
+                                <img src="img/소리.png"/>
+                            </button>
+                            <CopyToClipboard text={text} className={styles.btn}>
+                                <button className={styles.soundCopy}>
+                                    <img src="img/복사.png"/>
+                                </button>
+                            </CopyToClipboard>
+                        </div>
+                        
+                    </div>
+                </div>
+            </body>
+            <Footer />
+        </>
+    )
+}
 
 export default SignToText;
