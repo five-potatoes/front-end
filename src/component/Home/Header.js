@@ -7,24 +7,10 @@ const Header = () => {
     const goToSign = () => movePage('/');
     const goToText = () => movePage('/TextTranslator');
 
-    /*const [currentClick, setCurrentClick] = React.useState(null);
+    const [currentClick, setCurrentClick] = React.useState(null);
+    const [prevClick, setprevClick] = React.useState(null);
 
-    const GetClick = (e) =>{
-        setCurrentClick(e.target.id);
-    };
-
-    React.useEffect(
-        (e) => {
-            if (currentClick != null){
-                let current = document.getElementById(currentClick);
-                current.style.color = "black";
-                current.style.borderBottom = "2px solid";
-                current.style.borderBottomColor = "#1c28f4"
-            }
-            [currentClick]
-        }
-    );*/
-
+    const GetClick = (e) => {setCurrentClick(e.target.id);};
 
     return (
         <header className={styles.test}>
