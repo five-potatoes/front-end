@@ -10,11 +10,6 @@ import Webcam from "../function/Webcam";
 //https://stickode.tistory.com/663
 
 const SignToText = () => {
-    /* const [showInitialBody, setShowInitialBody] = useState(true);
-
-    const handleToggleBody = () => {
-    setShowInitialBody(!showInitialBody);
-    }; */
 
     const [text, setText] = useState("test");
 
@@ -33,24 +28,28 @@ const SignToText = () => {
     return (
         <>
             <Header />
-            <div className={styles.body}>
-                <div className={styles.video}>
-                    <Webcam mode={"sign"} />
-                    <div>
-                        <button className={styles.transBtn} onClick={() => { Translator("video"); }}>번역</button>
+            <body>
+                <div className={styles.body}>
+                    <div className={styles.video}>
+                        <Webcam mode={"sign"} />
+                    </div>
+                    <div className={styles.trans}>
+                        <textarea className={styles.text} onChange={handleInput} value={text} />
+                        <div>
+                            <button onClick={handleButton} className={styles.btn}>
+                                <img src="img/소리듣기.png"/>
+                            </button>
+                            <CopyToClipboard text={text} className={styles.btn}>
+                                <button>
+                                    <img src="img/복사버튼.png"/>
+                                </button>
+                            </CopyToClipboard>
+                        </div>
+                        
                     </div>
                 </div>
-                <div>
-                    <input className={styles.text} onChange={handleInput} value={text} />
-                    <button onClick={handleButton}>음성 변환</button>
-                    <CopyToClipboard text={text}><button>복사</button></CopyToClipboard>
-                </div>
-            </div>
+            </body>
             <Footer />
-            {/* {showInitialBody ? <Body1 /> : <Body2 />}*/}
-            {/* <button onClick={handleToggleBody}>
-            {showInitialBody ? 'Show Body 2' : 'Show Body 1'}
-            </button> */}
         </>
     )
 }
