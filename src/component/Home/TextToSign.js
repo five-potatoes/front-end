@@ -30,19 +30,19 @@ const TextToSign = () => {
                 <div className={styles.body}>
                     <div className={styles.trans}>
                         <textarea className={styles.text} onChange={handleInput} value={text} />
-                        <div>
-                            <button onClick={handleButton} className={styles.btn}>
-                                <img src="img/소리듣기.png"/>
+                        <div className={styles.btn}>
+                            <button onClick={handleButton} >
+                                <img src="img/소리.png" alt="" className={ styles.btnImg}/>
                             </button>
-                            <CopyToClipboard text={text} className={styles.btn}>
+                            <CopyToClipboard text={text}>
                                 <button>
-                                    <img src="img/복사버튼.png"/>
+                                    <img src="img/복사.png" alt="" className={ styles.btnImg}/>
                                 </button>
                             </CopyToClipboard>
                         </div>
                     </div>
                     <div className={styles.video}>
-                        <Webcam mode={"sign"} />
+                        <Webcam mode={"text"} src={""} />
                     </div>
                 </div>
             </body>
