@@ -34,13 +34,13 @@ const SignToText = () => {
                     </div>
                     <div className={styles.trans}>
                         <textarea className={styles.text} onChange={handleInput} value={text} />
-                        <div>
-                            <button onClick={handleButton} className={styles.btn}>
-                                <img src="img/소리.png"/>
+                        <div className={styles.btn}>
+                            <button onClick={handleButton} >
+                                <img src="img/소리.png" alt="소리" className={ styles.btnImg} />
                             </button>
-                            <CopyToClipboard text={text} className={styles.btn}>
+                            <CopyToClipboard text={text} >
                                 <button className={styles.soundCopy}>
-                                    <img src="img/복사.png"/>
+                                    <img src="img/복사.png" alt="복사" className={ styles.btnImg}/>
                                 </button>
                             </CopyToClipboard>
                         </div>
