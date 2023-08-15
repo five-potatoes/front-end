@@ -42,7 +42,7 @@ const TextToSign = () => {
                         </div>
                     </div>
                     <div className={styles.video}>
-                        <Webcam mode={"sign"} />
+                        <Webcam mode={"text"} />
                     </div>
                 </div>
             </body>
