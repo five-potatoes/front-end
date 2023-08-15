@@ -1,13 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import styles from '../styles/Body.module.css'
+import styles from '../styles/SignToText.module.css'
 import Footer from "./Footer";
 import Header from "./Header";
 import Translator from '../function/Translator'
 import TextToSpeak from "../function/TextToSpeak";
 import CopyToClipboard from "react-copy-to-clipboard";
 import Webcam from "../function/Webcam";
-//https://stickode.tistory.com/663
 
 const SignToText = () => {
 
