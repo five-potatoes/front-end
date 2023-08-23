@@ -132,7 +132,7 @@ const WebcamComponent = ({ mode, src }) => {
         {/* {recordedChunks.length > 0 && (
         <button onClick={handleDownload}>Download</button>
       )} */}
-        {recordedChunks.length > 0 &&
+        {(recordedChunks.length > 0 || mode === "text") &&
           (play ? (
             <button onClick={stopPlay}>
               <img src="img/중지.png" alt="재생중지" className={style.rb} />
