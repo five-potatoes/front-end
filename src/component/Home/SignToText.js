@@ -9,7 +9,7 @@ import Webcam from "../function/Webcam";
 
 const SignToText = () => {
 
-  const [text, setText] = useState("test");
+  const [text, setText] = useState("");
 
   useEffect(() => {
     window.speechSynthesis.getVoices();

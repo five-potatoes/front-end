@@ -9,7 +9,7 @@ import Webcam from "../function/Webcam";
 
 const TextToSign = () => {
 
-    const [text, setText] = useState("test");
+    const [text, setText] = useState("글자를 입력해주십시오.");
 
     useEffect(() => {
         window.speechSynthesis.getVoices();
