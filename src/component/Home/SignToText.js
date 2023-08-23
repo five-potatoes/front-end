@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import styles from '../styles/SignToText.module.css'
 import Footer from "./Footer";
 import Header from "./Header";
-import Translator from "../function/Translator";
 import TextToSpeak from "../function/TextToSpeak";
 import CopyToClipboard from "react-copy-to-clipboard";
 import Webcam from "../function/Webcam";
@@ -32,7 +31,7 @@ const SignToText = () => {
                         <Webcam mode={"sign"} />
                     </div>
                     <div className={styles.trans}>
-                        <textarea className={styles.text} onChange={handleInput} value={text} />
+                        <textarea className={styles.text} onChange={handleInput} value={""} disabled/>
                         <div className={styles.btn}>
                             <button onClick={handleButton} >
                                 <img src="img/소리.png" alt="소리" className={ styles.btnImg} />
