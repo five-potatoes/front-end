@@ -1,0 +1,25 @@
+.test {
+    display: inline-flexbox;
+    font-family: 'SUITE';
+    border: none;
+    background-color: #FAF9F5;
+}
+
+.logo{
+    margin-left: 200px;
+}
+
+.headbtn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 80px;
+    padding: 8px;
+    border: none;
+    background-color: #FAF9F5;
+    cursor: pointer;
+}
+
+.headbtn:hover{
+    color: yellowgreen
+}
